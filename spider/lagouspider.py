@@ -16,7 +16,7 @@ def scrapy(jobname):
     flag = True
     num = 1
 
-    filedir = 'D:/LagouJobInfo/lagou/' + jobname
+    filedir = './data/' + jobname
 
     if os.path.exists(filedir) is not True or os.path.isdir(filedir) is not True:
         os.mkdir(filedir)
@@ -33,7 +33,7 @@ def scrapy(jobname):
             print('正在爬取第 ' + str(num) + ' 页的数据...')
             print(job_json)
 
-            with open('D:/LagouJobInfo/lagou/' + jobname + '/' + str(num) + '.json', 'wt', encoding='utf-8') as f:
+            with open('./data/' + jobname + '/' + str(num) + '.json', 'wt', encoding='utf-8') as f:
                 f.write(str(job_json))
                 f.flush()
                 f.close()
@@ -45,7 +45,7 @@ def scrapy(jobname):
 
 
 if __name__ == '__main__':
-    configmap = toolkit.readconfig('C:/Users/XuLu/PycharmProjects/LagouJob/job.xml')
+    configmap = toolkit.readconfig('../job.xml')
 
     for item, value in configmap.items():
         for job in value:

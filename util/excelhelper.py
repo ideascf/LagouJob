@@ -62,7 +62,7 @@ def write_excel(lists, filename):
             ws.cell(row=rownum, column=13).value = each_job_info_obj['companySize']
             ws.cell(row=rownum, column=14).value = toolkit.normalize(each_job_info_obj['salary'])
             rownum += 1
-    wb.save('d:/' + filename + '.xlsx')
+    wb.save('./excel/' + filename + '.xlsx')
     logging.info('Excel生成成功!')
 
 
@@ -77,5 +77,5 @@ def process(json_file_path):
 
 if __name__ == '__main__':
     logging.info('start generating Excel file...')
-    process('D:/LagouJobInfo/lagou')
+    process('./data')
     logging.info('Done! Please check your result...')
