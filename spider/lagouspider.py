@@ -16,7 +16,7 @@ def scrapy(jobname):
     flag = True
     num = 1
 
-    filedir = './data/' + jobname
+    filedir = './data/brief/' + jobname
 
     if os.path.exists(filedir) is not True or os.path.isdir(filedir) is not True:
         os.mkdir(filedir)
@@ -33,7 +33,7 @@ def scrapy(jobname):
             print('正在爬取第 ' + str(num) + ' 页的数据...')
             print(job_json)
 
-            with open('./data/' + jobname + '/' + str(num) + '.json', 'wt', encoding='utf-8') as f:
+            with open('./data/brief/' + jobname + '/' + str(num) + '.json', 'wt', encoding='utf-8') as f:
                 f.write(str(job_json))
                 f.flush()
                 f.close()

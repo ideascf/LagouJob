@@ -62,7 +62,7 @@ def write_excel(lists, filename):
             ws.cell(row=rownum, column=13).value = each_job_info_obj['companySize']
             ws.cell(row=rownum, column=14).value = toolkit.normalize(each_job_info_obj['salary'])
             rownum += 1
-    wb.save('./excel/' + filename + '.xlsx')
+    wb.save('./data/excel/' + filename + '.xlsx')
     logging.info('Excel生成成功!')
 
 
